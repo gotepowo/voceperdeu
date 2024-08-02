@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Partida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .hidden {
+            display: none;
+        }
+        .message {
+            font-size: 24px;
+            margin: 20px;
+        }
+        .buttons {
+            margin: 20px;
+        }
+        button {
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        audio {
+            display: none; /* Hide the audio controls */
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="message">Você ganhou a partida?</div>
+        <div id="buttonContainer" class="buttons">
+            <button onclick="showGanhou()">Sim</button>
+            <button onclick="showPerdeu()">Não</button>
+        </div>
+        <div id="result" class="hidden">
+            <div id="resultMessage"></div>
+            <img id="resultImage" class="hidden" alt="Resultado">
+            <audio id="resultAudio" controls>
+                <source src="images/perdeu.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <script>
+        function showGanhou() {
+            document.getElementById('resultMessage').innerText = 'GG';
+            document.getElementById('resultImage').src = 'images/ganhou.png';
+            document.getElementById('resultImage').classList.remove('hidden');
+            document.getElementById('resultAudio').classList.add('hidden'); // Hide audio
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('buttonContainer').classList.add('hidden'); // Hide buttons
+        }
+
+        function showPerdeu() {
+            document.getElementById('resultMessage').innerText = 'KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK';
+            document.getElementById('resultImage').src = 'images/perdeu.png';
+            document.getElementById('resultImage').classList.remove('hidden');
+            document.getElementById('resultAudio').classList.remove('hidden'); // Make sure the audio element is present
+            document.getElementById('resultAudio').play(); // Play the audio
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('buttonContainer').classList.add('hidden'); // Hide buttons
+        }
+    </script>
+</body>
+</html>
