@@ -52,7 +52,7 @@
             <div id="resultMessage"></div>
             <img id="resultImage" class="hidden" alt="Resultado">
             <audio id="resultAudio" controls>
-                <source src="perdeu.mp3" type="audio/mpeg">
+                <source src="images/perdeu.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
@@ -61,7 +61,7 @@
     <script>
         function showGanhou() {
             document.getElementById('resultMessage').innerText = 'GG';
-            document.getElementById('resultImage').src = 'ganhou.png';
+            document.getElementById('resultImage').src = 'images/ganhou.png';
             document.getElementById('resultImage').classList.remove('hidden');
             document.getElementById('resultAudio').classList.add('hidden'); // Hide audio
             document.getElementById('result').classList.remove('hidden');
@@ -70,7 +70,7 @@
 
         function showPerdeu() {
             document.getElementById('resultMessage').innerText = 'KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK';
-            document.getElementById('resultImage').src = 'perdeu.png';
+            document.getElementById('resultImage').src = 'images/perdeu.png';
             document.getElementById('resultImage').classList.remove('hidden');
             document.getElementById('resultAudio').classList.remove('hidden'); // Make sure the audio element is present
             document.getElementById('resultAudio').play(); // Play the audio
